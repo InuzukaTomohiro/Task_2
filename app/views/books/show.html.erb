@@ -1,0 +1,15 @@
+<%= form_with model: @book do |f| %>
+<p class="new">
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+<p class="new">
+  <strong>Body:</strong>
+  <%= @book.body %>
+</p>
+<div class="edit">
+  <%= link_to "Edit", edit_book_path(@book.id) %>
+  |
+  <%= link_to "Back", books_path %>
+</div>
+<% end %>

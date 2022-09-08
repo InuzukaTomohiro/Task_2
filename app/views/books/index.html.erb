@@ -1,0 +1,48 @@
+<h1>Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @books.each do |books| %>
+    <tr>
+      <td><span><%= books.title %></span></td>
+      <td><span><%= books.body %></span></td>
+
+      <td><%= link_to "Show", book_path(books.id) %></td>
+      <td><%= link_to "Edit", edit_book_path(books.id) %></td>
+      <td><%= link_to "Destroy", book_path(books),method: :delete, "data-confirm" => "Are you sure?" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+
+
+<h2>New book</h2>
+
+
+<%= form_with model: @books,url: '/books',method: :post do |f| %>
+
+<div class="field">
+  <p class="create">Title</p>
+  <div class="text1">
+    <%= f.text_field :title %>
+  </div>
+</div>
+<div class="field">
+  <p class="create">Body</p>
+  <div class="text2">
+    <%= f.text_area :body %>
+  </div>
+</div>
+<div class="field">
+  <%= f.submit 'Create Book' %>
+</div>
+
+<% end %>
