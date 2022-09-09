@@ -117,8 +117,9 @@ input[type="submit"] {
 
 
 .notice {
-  background-color: #00800;
+  background-color: #008000;
   font-size: 13px;
+  line-height: 18px;
   margin:33px;
   color: green;
 }
