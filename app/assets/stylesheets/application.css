@@ -33,6 +33,7 @@ h1 {
   margin: 17.42px 0 17.42px;
   line-height: 18px;
   font-size: 26px;
+  display: block;
 }
 
 strong {
@@ -80,13 +81,21 @@ h2 {
   margin: 16.185px 0px;
 }
 
-.field {
+.create {
+  font-size: 13px;
+  line-height: 18px;
+  cursor: default;
+  display: block;
+}
+
+.text {
   margin-bottom: 10px;
 }
 
-.create {
-  margin: 0;
+.button {
+  margin-bottom: 10px;
 }
+
 
 input[type="text"] {
   padding: 1px 2px;
@@ -112,5 +121,38 @@ input[type="submit"] {
   font-size: 13px;
   margin:33px;
   color: green;
+}
+
+/*エラー表示レイアウト*/
+#errors_display > h2 {
+  font-size: 12px;
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  margin: -7px -7px 0 -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+
+#errors_display {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0 7px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+ul {
+  font-size:13px;
+  margin: 33px;
+  padding-left: 40px;
+}
+
+.errors_field {
+  background-color: red;
+  padding:2px;
+  display: table;
+
 }
 

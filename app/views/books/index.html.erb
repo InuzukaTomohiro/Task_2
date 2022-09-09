@@ -27,22 +27,38 @@
 <h2>New book</h2>
 
 
-<%= form_with model: @books,url: '/books',method: :post do |f| %>
-
-<div class="field">
-  <p class="create">Title</p>
-  <div class="text1">
-    <%= f.text_field :title %>
+  <%= form_with model: @book do %>
+  <% if @book.errors.any? %>
+  <div id = "errors_display">
+    <h2><%= @book.errors.count %> errors prohibited this book from being saved:</h2>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+        <li>
+          <%= message %>
+        </li>
+        <% end %>
+      </ul>
   </div>
-</div>
+  <% end %>
+  <% end %>
+<%= form_with model: @book,url: '/books',method: :post do |f| %>
 <div class="field">
-  <p class="create">Body</p>
-  <div class="text2">
-    <%= f.text_area :body %>
+      <label class="create">Title</label>
+    </div>
+    <div class="text">
+        <%= f.text_field :title %>
+      </div>
+    </div>
   </div>
-</div>
-<div class="field">
-  <%= f.submit 'Create Book' %>
-</div>
-
+  <div class="field">
+      <label class="create">Body</label>
+    </div>
+    <div class="text">
+        <%= f.text_area :body %>
+      </div>
+    </div>
+  </div>
+  <div class="button">
+    <%= f.submit 'Create Book' %>
+  </div>
 <% end %>
